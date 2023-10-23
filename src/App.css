@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 768px;
+  border: 1px solid var(--primary-bg-color);
+  border-radius: 1rem;
+  margin: 10% auto;
+}
+
+
+
+
+
+
+

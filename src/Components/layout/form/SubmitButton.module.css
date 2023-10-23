@@ -1,0 +1,14 @@
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-bg-color);
+    outline: none;
+    border: none;
+    padding: .5rem 1.2rem;
+    border-radius: 8px;
+    
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    opacity: .8;
+}

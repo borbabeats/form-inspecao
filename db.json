@@ -1,0 +1,31 @@
+{
+  "setores": [
+      {
+          "id": 1,
+          "name": "RH"
+      },
+      {
+          "id": 2,
+          "name": "TI"
+      },
+      {
+          "id": 3,
+          "name": "Financeiro"
+      },
+      {
+          "id": 4,
+          "name": "Manutencao"
+      },
+      {
+          "id": 5,
+          "name": "Engenharia"
+      }
+  ],
+  "avaliador": [
+      {
+          "name": "teste",
+          "password": "testesenha"
+      }
+  ],
+  "colaborador": []
+}

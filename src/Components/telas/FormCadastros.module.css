@@ -1,0 +1,48 @@
+input {
+    margin-right: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: #ddd;
+    width: fit-content !important;
+}
+
+
+
+label {
+    text-align: start;
+}
+
+
+input[type='textarea'] {
+    width: 300px;
+    height: 100px;
+}
+
+.form_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form_header input[type='text'] {
+    width: 350px !important;
+}
+
+.form_header input[type='number'] {
+    width: 200px !important;
+}
+
+.form_body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: start;
+} 
+
+.form_body Input {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
