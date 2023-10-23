@@ -1,38 +1,45 @@
-import { useNavigate } from 'react-router-dom'
-import FormCadastros from "./FormCadastros"
+import { useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
+import styles from './Cadastros.module.css'
 
 function Cadastros() {
-    const navigate = useNavigate()
-
-
-    function newRegister(register) {
-        register.name = 0
-        register.registration = 0
-        register.sector = 0
-        register.verifieds = []
-
-        fetch("http://localhost:5000/colaborador", {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(register),
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data)
-            //redirect
-        })
-        .catch((err) => console.log(err))
+    const [colaborador, setColaborador] = useState([])
+    const location = useLocation()
+    let message = ''
+    if(location.state) {
+        message.location.state.message
     }
 
-    return (
-        <>
-        <h1>E.P.I.'S verificados quanto ao uso e aplicacao adequada</h1>
-            <FormCadastros handleSubmit={newRegister} />
-        </>
-    )
+    useEffect(() => {
+        fetch('http://localhost:3000/colaborador', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }) 
+    .then((resp) => resp.json())
+    .then((data) => {
+        console.log(data)
+        setColaborador(data)
+    })
+    .catch((err) => console.log(err))
+}, [])
+
+return <div>
+    <h1>Meus cadastros</h1>
+
+    <message && <Message msg="{message}" type="success"/>
+    {colaborador.length > 0 && colaborador.map(cadastro) => 
+        <CadastroCard 
+        id={cadastro.id}
+        name={cadastro.name}
+        setor={cadastro.setor}
+        key={cadastro.id}
+        />
+)}
+</div>
+
 }
 
 export default Cadastros
